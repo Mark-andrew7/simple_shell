@@ -2,7 +2,7 @@
 #define DELIM ":"
 
 /**
- * find_executable - searches for and locates an executable command in the PATH.
+ * find_executable - searches for an executable command in the PATH.
  * @cmd: user input command to locate
  *
  * Return: If an error occurs or the command cannot be located - NULL.
@@ -16,15 +16,16 @@ char *token, *full_path, *path_copy;
 int full_path_length;
 
 if (!path_env)
-return NULL;
+return (NULL);
 
 path_copy = strdup(path_env);
 if (!path_copy)
-return NULL;
+return (NULL);
 
 token = strtok(path_copy, DELIM);
 
-while (token) {
+while (token)
+{
 full_path_length = strlen(token) + strlen(cmd) + 2;
 full_path = malloc(full_path_length);
 
@@ -36,7 +37,8 @@ return (NULL);
 
 sprintf(full_path, "%s/%s", token, cmd);
 
-if (access(full_path, F_OK | X_OK) == 0) {
+if (access(full_path, F_OK | X_OK) == 0)
+{
 free(path_copy);
 return (full_path);
 }
