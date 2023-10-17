@@ -24,7 +24,7 @@ lineStatus = getline(&buffer, &len, stdin);
 if (lineStatus == -1)
 {
 free(buffer);
-break;
+exit(0);
 }
 
 arg = tokenize(buffer);
