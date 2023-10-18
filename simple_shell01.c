@@ -57,8 +57,10 @@ int i;
 
 if (args)
 {
-for (i = 0; args[i]; i++)
+for (i = 0; args[i] != NULL; i++)
+{
 free(args[i]);
+}
 free(args);
 }
 }
@@ -76,7 +78,7 @@ int i = 0;
 char **args, *token;
 
 args = malloc(sizeof(char *) * 1024);
-if (args == NULL)
+if (!args)
 return (NULL);
 
 token = strtok(str, DELIM);
@@ -103,5 +105,7 @@ return (args);
 void prompt(void)
 {
 if (isatty(STDIN_FILENO))
+{
 write(STDOUT_FILENO, "$ ", 2);
+}
 }
