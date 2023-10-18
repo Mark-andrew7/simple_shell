@@ -15,12 +15,22 @@ char *path_env = getenv("PATH");
 char *token, *full_path, *path_copy;
 int full_path_length;
 
-if (!path_env)
+if (strchr(cmd, '/') != NULL)
+{
+if (access(cmd, X_OK) == 0)
+return (strdup(cmd));
 return (NULL);
+}
+if (!path_env)
+{
+return (NULL);
+}
 
 path_copy = strdup(path_env);
 if (!path_copy)
+{
 return (NULL);
+}
 
 token = strtok(path_copy, DELIM);
 

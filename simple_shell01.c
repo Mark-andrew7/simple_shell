@@ -32,7 +32,15 @@ if (arg == NULL)
 {
 continue;
 }
+
+if (strcmp(arg[0], "cd") == 0)
+{
+handle_cd_command(arg);
+}
+else
+{
 executeCommand(argv[0], arg);
+}
 free_tokens(arg);
 free(buffer);
 buffer = NULL;

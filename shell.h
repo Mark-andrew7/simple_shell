@@ -23,6 +23,7 @@ char *find_executable(const char *cmd);
 int executeCommand(char *programName, char **arguments);
 void printEnvironment(void);
 ssize_t custom_getline(char **lineptr, size_t *n);
+void handle_cd_command(char **arguments);
 
 
 #endif
