@@ -1,5 +1,6 @@
 #include "shell.h"
 #define DELIM " \n\t\r"
+#include "command_separator.h"
 
 /**
  * main - main function
@@ -16,6 +17,7 @@ ssize_t lineStatus;
 int i;
 char *buffer = NULL;
 char **arg;
+char **commands;
 
 while (1)
 {
@@ -27,7 +29,17 @@ free(buffer);
 exit(0);
 }
 
+commands = split_commands(buffer);
+if (commands == NULL)
+{
+free(buffer);
+continue;
+}
+
+for (i = 0; commands[i] != NULL; i++)
+{
 arg = tokenize(buffer);
+}
 if (arg == NULL)
 {
 continue;
