@@ -1,6 +1,5 @@
 #include "shell.h"
 #define DELIM " \n\t\r"
-#include "command_separator.h"
 
 /**
  * main - main function

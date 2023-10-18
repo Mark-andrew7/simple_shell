@@ -1,16 +1,16 @@
 #include "shell.h"
 
 static char buffer[BUFF_SIZE];
-static size_t buffer_index = 0;
+static size_t buffer_index;
 
 /**
- * custom_getline - Read a line from standard input into a dynamically allocated buffer.
+ * custom_getline - Read a line from stdin
  *
  * @lineptr: A pointer to the buffer where the line will be stored.
  * @n: A pointer to the size of the buffer.
  *
  * Return:
- *  - On success, returns the number of characters read (excluding the null terminator).
+ *  - On success, returns the number of characters read
  *  - On error or end of input, returns -1.
  */
 ssize_t custom_getline(char **lineptr, size_t *n)
