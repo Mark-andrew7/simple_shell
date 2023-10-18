@@ -1,5 +1,8 @@
 #include "shell.h"
-
+/**
+ * handle_cd_command - Handle the "cd" built-in command.
+ * @arguments: An array of strings containing the command and its arguments.
+ */
 void handle_cd_command(char **arguments)
 {
 if (arguments[1] == NULL || strcmp(arguments[1], "~") == 0)

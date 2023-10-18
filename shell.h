@@ -24,6 +24,7 @@ int executeCommand(char *programName, char **arguments);
 void printEnvironment(void);
 ssize_t custom_getline(char **lineptr, size_t *n);
 void handle_cd_command(char **arguments);
+char **split_commands(char *input);
 
 
 #endif
