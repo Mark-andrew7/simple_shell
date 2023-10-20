@@ -20,6 +20,7 @@ char *name;
 char *value;
 struct Alias *next;
 };
+struct Alias *alias_list = NULL;
 
 typedef struct info
 {
@@ -30,6 +31,7 @@ char *full_path;
 char *path_copy;
 char **env;
 char **arguments;
+int lineStatus;
 }info_t;
 
 int _putchar(char c);
