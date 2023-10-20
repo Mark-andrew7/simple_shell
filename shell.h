@@ -21,6 +21,17 @@ char *value;
 struct Alias *next;
 };
 
+typedef struct info
+{
+int readfd;
+char *path_env;
+char *token;
+char *full_path;
+char *path_copy;
+char **env;
+char **arguments;
+}info_t;
+
 int _putchar(char c);
 void prompt(void);
 void free_tokens(char **args);
@@ -34,5 +45,9 @@ void handle_cd_command(char **arguments);
 char **split_commands(char *input);
 void handle_exit_command(char **arguments);
 void process_alias_command(char **arguments, struct Alias **alias_list);
+int checkInteractive(info_t *shellInfo);
+int isDelimiter(char character, char *delimiters);
+int isAlphabetic(int character);
+int stringToInteger(char *inputString);
 
 #endif
