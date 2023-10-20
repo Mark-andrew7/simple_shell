@@ -14,6 +14,13 @@
 
 extern char **environ;
 
+struct Alias
+{
+char *name;
+char *value;
+struct Alias *next;
+};
+
 int _putchar(char c);
 void prompt(void);
 void free_tokens(char **args);
@@ -26,6 +33,6 @@ ssize_t custom_getline(char **lineptr, size_t *n);
 void handle_cd_command(char **arguments);
 char **split_commands(char *input);
 void handle_exit_command(char **arguments);
-
+void process_alias_command(char **arguments, struct Alias **alias_list);
 
 #endif

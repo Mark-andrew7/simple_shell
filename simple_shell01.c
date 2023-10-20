@@ -41,6 +41,10 @@ else
 {
 executeCommand(argv[0], arg);
 }
+else
+{
+fprintf(stderr, "Invalid command input\n");
+}
 free_tokens(arg);
 free(buffer);
 buffer = NULL;
